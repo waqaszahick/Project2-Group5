@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Data Analysis & Visualization</title>
+  <meta name="viewport" content="width=device=width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+
+</head>
+<body >
+  
+    <header id="header">
+      <div class="container-fluid">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Restaurants (Australia) <i class="material-icons" style='font-size:20px;color:crimson'>public</i><br/>Data Analysis & Visualization Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">          
+          <a class="nav-link" href="/">
+            <i class="fa fa-home" style='font-size:20px;color:crimson'></i> Home Page
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons" style='font-size:20px;color:crimson'>local_dining</i> Restaurants
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" target="_self" href="#"><i class="material-icons" style='font-size:15px;color:crimson'>local_dining</i> Restaurants by Name</a>
+              <ul class="dropdown-menu namedropdown" id="namedropdown">
+              </ul>
+           </div>
+            <div class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" target="_self" href="#"><i class="material-icons" style='font-size:15px;color:crimson'>local_dining</i> Restaurants by State / Territory</a>
+              <ul class="dropdown-menu" id="statedropdown">
+              </ul>
+           </div>
+           <div class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" target="_self" href="#"><i class="material-icons" style='font-size:15px;color:crimson'>local_dining</i> Restaurants by City</a>
+            <ul class="dropdown-menu citydropdown" id="citydropdown">
+            </ul>
+         </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <style>
+            .palevioletred-color {
+            color:palevioletred;
+            }
+          </style>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons" style="font-size:20px;color: palevioletred">restaurant</i> Cuisine Type
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="cuisinedropdown">
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <style>
+            .checked {
+              color: orange;
+            }
+          </style>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-star checked"></i> Ratings
+          </a>
+          <div class="dropdown-menu ratingdropdown" aria-labelledby="navbarDropdown">
+            <style>
+            .checked {
+              color: orange;
+            }
+            </style>
+            <a class="dropdown-item" target="_self" href="javascript:showByRatingData(1);"><i class="fa fa-star checked"></i> 1-Star</a>
+            <a class="dropdown-item" target="_self" href="javascript:showByRatingData(2);"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i> 2-Star</a>
+            <a class="dropdown-item" target="_self" href="javascript:showByRatingData(3);"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i> 3-Star</a>
+            <a class="dropdown-item" target="_self" href="javascript:showByRatingData(4);"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i> 4-Star</a>
+            <a class="dropdown-item" target="_self" href="javascript:showByRatingData(5);"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i> 5-Star</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-shipping-fast" style='font-size:20px;color:green'></i> Delivery Services
+          </a>
+          <div class="dropdown-menu deliverydropdown" aria-labelledby="navbarDropdown" id="deliverydropdown">
+            <a class="dropdown-item" target="_self" href="javascript:showByDeliveryServiceData('ubereats');"><i class="fab fa-uber" style='font-size:15px;color:black'></i> Uber Eats</a>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+  </div>
+  </header>
+  <!-- <section id="hero1" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h1>AUSTRALIAN RESTAURANTS</h1>
+          <h2>DATA ANALYSIS & VISUALIZATIONS</h2>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <div class="hero1 text-center" id="hero1">
+    <h1>AUSTRALIAN RESTAURANTS</h1>
+    <p>DATA ANALYSIS & VISUALIZATIONS</p>
+  </div>
+  <section class="container-fluid">
+      <div class="row justify-content-around">
+        <div class="card col-lg-12 col-sm-12 col-md-12">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <th>Restaurant</th>
+                  <th>Business Status</th>
+                  <th>Business Hours</th>
+                  <th>Restaurant Address</th>
+                  <th>State</th>
+                  <th>City</th>
+                  <th>Rating</th>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+  
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- Our JS -->
+<script src="./static/js/data.js"></script>
+
+</body>
+
+</html>
