@@ -7,13 +7,12 @@
   <meta name="viewport" content="width=device=width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css">
   <link rel="stylesheet" href="./static/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
-
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-      <!-- Leaflet CSS -->
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-      crossorigin="" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
 
   <!-- Marker Cluster CSS -->
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
@@ -32,7 +31,15 @@
     <header id="header">
       <div class="container-fluid">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Restaurants (Australia) <i class="material-icons" style='font-size:20px;color:crimson'>public</i><br/>Data Analysis & Visualization Dashboard</a>
+    <a class="navbar-brand" href="/" style="color:indianred">Restaurants (Australia)
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>      
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>                  
+      <br>Data Analysis & Visualization Dashboard
+      <i class="fa fa-spinner fa-pulse" style="font-size:24px;color:crimson"></i>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -45,24 +52,38 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:drawBarChart();">Bar Chart </a>
+          <a class="nav-link" href="/data">Data
+            <i class="fa fa-folder-open" style="font-size:20px;color:goldenrod"></i>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:drawPieChart();">Pie Chart </a>
+          <a class="nav-link" href="javascript:drawBarChart();">Bar Chart 
+            <i class="fa fa-bar-chart" style="font-size:20px;color:deeppink"></i>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:drawBubbleChart();">Bubble Chart </a>
+          <a class="nav-link" href="javascript:drawPieChart();">Pie Chart 
+            <i class="fa fa-pie-chart" style="font-size:20px;color:orange"></i>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:showMap();">Leaflet Map </a>
+          <a class="nav-link" href="javascript:drawBubbleChart();">Bubble Chart 
+            <i class="fa fa-map-pin" style="font-size:20px;color:royalblue"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:showMap();">Geo-Maps 
+            <i class="fa fa-globe" style="font-size:20px;color:gray"></i>
+          </a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="javascript:drawD3Chart();">D3.JS Chart </a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="javascript:showBonusMap();">Bonus LeafletJS Plugin </a>
+          <a class="nav-link" href="javascript:showBonusMap();">Bonus Plugins 
+            <i class="fa fa-leaf" style="font-size:20px;color:green"></i>
+          </a>
         </li>
-        
       </ul>
     </div>
   </nav>

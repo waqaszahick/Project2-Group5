@@ -11,14 +11,24 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
   <link rel="stylesheet" href="./static/css/style.css">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>  
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>  
 </head>
 <body >
   
     <header id="header">
       <div class="container-fluid">
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Restaurants (Australia) <i class="material-icons" style='font-size:20px;color:crimson'>public</i><br/>Data Analysis & Visualization Dashboard</a>
+    <a class="navbar-brand" href="/" style="color:indianred">Restaurants (Australia)
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>      
+      <i class="material-icons" style="font-size:20px;color:goldenrod">grade</i>                  
+      <br>Data Analysis & Visualization Dashboard
+      <i class="fa fa-spinner fa-pulse" style="font-size:24px;color:crimson"></i>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -86,14 +96,21 @@
             <a class="dropdown-item" target="_self" href="javascript:showByRatingData(5);"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i> 5-Star</a>
           </div>
         </li>
-        <li class="nav-item dropdown">
-          
+        <li class="nav-item dropdown">          
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-shipping-fast" style='font-size:20px;color:green'></i> Delivery Services
+            <i class="fa fa-truck" style='font-size:20px;color:green'></i> Delivery Services
           </a>
           <div class="dropdown-menu deliverydropdown" aria-labelledby="navbarDropdown" id="deliverydropdown">
-            <a class="dropdown-item" target="_self" href="javascript:showByDeliveryServiceData('ubereats');"><i class="fab fa-uber" style='font-size:15px;color:black'></i> Uber Eats</a>
-          </div>
+            <a class="dropdown-item" target="_self" href="javascript:showByDeliveryServiceData('ubereats');"><span class="iconify" data-icon="simple-icons:ubereats" data-inline="false" style="size:20px;color:black"></span> Uber Eats</a>
+            <a class="dropdown-item" target="_self" href="javascript:showByDeliveryServiceData('ubereats');"><span class="iconify" data-icon="simple-icons:deliveroo" data-inline="false" style="font-size:15px;color:teal"></span> Deliveroo</a>
+            <a class="dropdown-item" target="_self" href="javascript:showByDeliveryServiceData('ubereats');"><i class='fas fa-shipping-fast' style='font-size:13px;color:darkorange'></i> Menulog</a>
+            
+          </div>          
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/visual">Visualizations
+            <i class="fa fa-bar-chart" style="font-size:20px;color:darkviolet"></i>
+          </a>
         </li>
         
       </ul>
@@ -138,10 +155,9 @@
         </div>
       </div>
       
-  </section>
-  
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  </section>  
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
