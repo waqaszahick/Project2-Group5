@@ -10,4 +10,3 @@ app = Flask(__name__)
 mongo = PyMongo(app, uri="mongodb://localhost:27017/"+db_name)
 
 restaurants_data = mongo.db.collection.find_one()
-
