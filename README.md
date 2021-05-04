@@ -31,7 +31,7 @@ Fullscreen (Leaflet) - Added a button to allow user to make map full screen
 easyPrint (Leaflet)- Added a download button for map
 IconLayers (Leaflet)- Added Several visualisation options to change the colour scheme and highlighting of map.
 
-How to run the aproject / application from local machine, or on local server environment:
+How to run this project / application from local machine, or on local server environment:
 - Run 'mongo_db_from_csv.py' on 'Visual Studio' - this will automatically initiate the database (restaurants_data) in 'MongoDB Compass'.
 - Run 'app.py' in 'Git Bash' shell - this will initiate the local server (http://127.0.0.1:5000) environment.
 - Open browser on local machine, and type the URL: 'http://127.0.0.1:5000' to run the project / application.
